@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+}
+.container ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.container span {
+}
+.icon {
+  padding-right: 3px;
+  size: 10rem;
+}
