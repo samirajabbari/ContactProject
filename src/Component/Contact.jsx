@@ -6,6 +6,7 @@ import inputList from "./Constant/inputList.js";
 import ContactsList from "./ContactsList.jsx";
 
 function Contact() {
+  // const [nocontact, setNocantact] = useState(false);
   const [alert, setAlert] = useState("");
   const [contacts, setcontacts] = useState([]);
   const [contact, setContact] = useState({
@@ -47,6 +48,10 @@ function Contact() {
       phonNumber: "",
     });
   };
+  const deleteHandler = (id) => {
+    const newContacts = contacts.filter((contact) => contact.id !== id);
+    setcontacts(newContacts);
+  };
   return (
     <div className={styles.container}>
       <div className={styles.form}>
@@ -66,10 +71,19 @@ function Contact() {
       </div>
       <div>{alert && <p>{alert}</p>}</div>
       <h3>ContacList</h3>
-      {}
-      {contacts.map((contact) => (
-        <ContactsList key={contact.id} data={contact} />
-      ))}
+      {/* {contacts.length ? (
+        contacts.map((contact) => (
+          <ContactsList key={contact.id} data={contact} />
+        ))
+      ) : (
+        <p className={styles.noContac}>No Contacts Yet!</p>
+      )} */}
+
+      {contacts.length ? (
+        <ContactsList data={contacts} deleteHandler={deleteHandler} />
+      ) : (
+        <p className={styles.noContac}>No Contacts Yet!</p>
+      )}
     </div>
   );
 }

@@ -30,3 +30,15 @@
   background-color: #0059ff;
   color: white;
 }
+.noContac {
+  display: flex;
+  width: 100%;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdb0ba;
+  border: #ff6176;
+  font-weight: 500;
+  color: brown;
+  border-radius: 0.5rem;
+}
